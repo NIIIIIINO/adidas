@@ -7,12 +7,23 @@ class HomeScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
-            'SHOP',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+          title: Row(
+            children: [
+              Image.asset(
+                'assets/images/adidas_logo.png',
+                height: 100,
+                width: 100,
+              ),
+              SizedBox(width: 8),
+              Text(
+                'SHOP',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.black,
+                ),
+              ),
+            ],
           ),
           backgroundColor: Colors.white,
           actions: <Widget>[
@@ -20,21 +31,22 @@ class HomeScreen extends StatelessWidget {
               margin: EdgeInsets.only(right: 16.0),
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.person_outline),
+                icon: Icon(Icons.person_outline, color: Colors.black),
               ),
             )
           ],
+          elevation: 0,
         ),
         body: Column(
           children: [
-            // Search Bar
+            // Row แรก
             Container(
               width: double.infinity,
               height: 50,
               decoration: BoxDecoration(
                 border: Border(
-                  top: BorderSide(color: Color.fromARGB(255, 240, 240, 240)),
-                  bottom: BorderSide(color: Color.fromARGB(255, 240, 240, 240)),
+                  top: BorderSide(color: Color(0xFFF0F0F0)),
+                  bottom: BorderSide(color: Color(0xFFF0F0F0)),
                 ),
               ),
               child: Row(
@@ -43,43 +55,151 @@ class HomeScreen extends StatelessWidget {
                     padding: EdgeInsets.all(15.0),
                     child: Icon(
                       Icons.search,
+                      size: 20,
+                      color: Colors.grey.shade500,
                     ),
                   ),
                   Text(
                     "Find product",
                     style: GoogleFonts.lato(
-                      fontSize: 12,
-                      color: Colors.grey.shade400,
+                      fontSize: 14,
+                      color: Colors.grey.shade500,
                       letterSpacing: 1,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            // Row ที่สอง
+            Container(
+              width: double.infinity,
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Color(0xFFF0F0F0)),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(15.0),
+                  ),
+                  Text(
+                    "WOMEN   MEM   KIDS",
+                    style: GoogleFonts.lato(
+                      fontSize: 12,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      letterSpacing: 1,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 370,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Color(0xFFF0F0F0)),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Image.asset(
+                      'assets/images/promotion.png', // รูปภาพเดียว
+                      height: 500,
+                      width: 600,
                     ),
                   ),
                 ],
               ),
             ),
-
-            // Category Bar (Men, Women, Kids)
             Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              width: double.infinity,
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Color(0xFFF0F0F0)),
+                ),
+              ),
+              child: Row(
                 children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Men  Women  Kids",
-                      style: GoogleFonts.lato(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                  Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Icon(
+                      Icons.category,
+                      size: 20,
+                      color: const Color.fromARGB(255, 0, 0, 0),
                     ),
                   ),
-                  const SizedBox(height: 30),
-                  Image.asset(
-                    '../assets/image/quiz-logo.png',
-                  width: 50,
-                  color: Colors.white.withOpacity(0.6),
+                  Text(
+                    "SHOES",
+                    style: GoogleFonts.lato(
+                      fontSize: 20,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      letterSpacing: 1,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Color(0xFFF0F0F0)),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Icon(
+                      Icons.category,
+                      size: 20,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                    ),
                   ),
+                  Text(
+                    "CLOTHING",
+                    style: GoogleFonts.lato(
+                      fontSize: 20,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      letterSpacing: 1,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 50,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Color(0xFFF0F0F0)),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(15.0),
+                    child: Icon(
+                      Icons.category,
+                      size: 20,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                  Text(
+                    "ACCESSORIES",
+                    style: GoogleFonts.lato(
+                      fontSize: 20,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                      letterSpacing: 1,
+                    ),
+                  )
                 ],
               ),
             ),
